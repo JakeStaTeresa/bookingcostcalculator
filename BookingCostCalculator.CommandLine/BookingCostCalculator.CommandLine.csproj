@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="8.0.0" />
+      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.1" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.1" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.1" />
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.1" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.1" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.1" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.1" />
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BookingCostCalculator.Application\BookingCostCalculator.Application.csproj" />
+      <ProjectReference Include="..\BookingCostCalculator.Domain\BookingCostCalculator.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="input.json" />
+      <EmbeddedResource Include="Bookings.json" />
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+</Project>

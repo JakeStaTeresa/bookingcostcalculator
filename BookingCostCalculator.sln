@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingCostCalculator.Domain", "BookingCostCalculator.Domain\BookingCostCalculator.Domain.csproj", "{1FB6C692-963F-4D04-9A34-58C7445052FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingCostCalculator.Application", "BookingCostCalculator.Application\BookingCostCalculator.Application.csproj", "{DF124404-F543-4F77-B11F-9A28CCC3F871}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingCostCalculator.CommandLine", "BookingCostCalculator.CommandLine\BookingCostCalculator.CommandLine.csproj", "{8FA0334A-F5CE-4792-8A76-55D0B5A4D96D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FB6C692-963F-4D04-9A34-58C7445052FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FB6C692-963F-4D04-9A34-58C7445052FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FB6C692-963F-4D04-9A34-58C7445052FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FB6C692-963F-4D04-9A34-58C7445052FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF124404-F543-4F77-B11F-9A28CCC3F871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF124404-F543-4F77-B11F-9A28CCC3F871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF124404-F543-4F77-B11F-9A28CCC3F871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF124404-F543-4F77-B11F-9A28CCC3F871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FA0334A-F5CE-4792-8A76-55D0B5A4D96D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FA0334A-F5CE-4792-8A76-55D0B5A4D96D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FA0334A-F5CE-4792-8A76-55D0B5A4D96D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FA0334A-F5CE-4792-8A76-55D0B5A4D96D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
