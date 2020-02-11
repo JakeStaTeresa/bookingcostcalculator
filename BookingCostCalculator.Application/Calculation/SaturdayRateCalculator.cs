@@ -1,5 +1,4 @@
 using System;
-using BookingCostCalculator.Application.Validation;
 using BookingCostCalculator.Domain;
 using Microsoft.Extensions.Options;
 
