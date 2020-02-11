@@ -22,17 +22,8 @@ namespace BookingCostCalculator.CommandLine
             IServiceCollection serviceCollection = new ServiceCollection();
             ConfigureServices(serviceCollection);
 
-            var serviceProvider = serviceCollection.BuildServiceProvider();
-            var mediator = serviceProvider.GetRequiredService<IMediator>();
-
-            var bookings = ReadBookings();
-            var query = new GetBookingCostsQuery
-            {
-                Bookings = bookings
-            };
-
-            var response = await mediator.Send(query);
-            WriteBookings(response);
+            var program = new Program();
+            await program.Run(serviceCollection.BuildServiceProvider());
         }
 
         public static void ConfigureServices(IServiceCollection services)
@@ -67,7 +58,21 @@ namespace BookingCostCalculator.CommandLine
             services.AddScoped<ICalculator, DayRateCalculator>();
         }
 
-        private static IEnumerable<Booking> ReadBookings()
+        private async Task Run(IServiceProvider serviceProvider)
+        {
+            var mediator = serviceProvider.GetRequiredService<IMediator>();
+
+            var bookings = ReadBookings();
+            var query = new GetBookingCostsQuery
+            {
+                Bookings = bookings
+            };
+
+            var response = await mediator.Send(query);
+            WriteBookings(response);
+        }
+        
+        private IEnumerable<Booking> ReadBookings()
         {
             using var stream = typeof(Program).Assembly.GetManifestResourceStream("BookingCostCalculator.CommandLine.Bookings.json");
             using var streamReader = new StreamReader(stream);
@@ -75,7 +80,7 @@ namespace BookingCostCalculator.CommandLine
             return JsonConvert.DeserializeObject<IEnumerable<Booking>>(fileContents);
         }
 
-        private static void WriteBookings(IEnumerable<Booking> bookings)
+        private void WriteBookings(IEnumerable<Booking> bookings)
         {
             var json = JsonConvert.SerializeObject(bookings, Formatting.Indented);
             File.WriteAllText("output.json", json);
