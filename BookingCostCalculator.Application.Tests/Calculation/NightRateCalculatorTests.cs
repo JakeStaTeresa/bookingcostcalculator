@@ -8,7 +8,7 @@ namespace BookingCostCalculator.Application.Tests.Calculation
 {
     public class NightRateCalculatorTests
     {
-        private readonly NightRateCalculator calculator;
+        private readonly ICalculator calculator;
 
         public NightRateCalculatorTests()
         {
