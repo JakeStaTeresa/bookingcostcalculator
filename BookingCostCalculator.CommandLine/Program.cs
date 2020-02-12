@@ -48,7 +48,7 @@ namespace BookingCostCalculator.CommandLine
             //Register validators
             services.AddScoped<IValidator, MinimumBookingValidator>();
             services.AddScoped<IValidator, MaximumBookingValidator>();
-            services.AddScoped<IValidator, OverlappingBookingValidator>();
+            services.AddScoped<IValidator, BookingOffsetValidator>();
             services.AddScoped<IValidator, BookingIncrementValidator>();
             
             //Register calculators
