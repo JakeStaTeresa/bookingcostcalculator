@@ -11,7 +11,7 @@ Assumptions
 ------------
 
 * The specification mentions that the Day rate is applicable between 600 and 2000. It also mentions that night rate is applicable between 2000 and 600. In order to avoid conflicts due to the overlap, it is assumed that actual start and end times for Day and Night rates should be 601 to 2000 and 2001 to 600 respectively.
-* The specification did not mention it but it is assumed that Saturday and Sunday rates should be applied if any part of the booking falls on any one of them.
+* The specification did not mention it but it is assumed that if any part of the booking falls on a Saturday or Sunday, Saturday and Sunday rates should be applied respectively.
 
 Overview
 ------------
