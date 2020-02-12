@@ -1,0 +1,18 @@
+@startuml "application structure"
+!include classes.puml
+
+Program "1" -- "1" QueryHandler : has
+QueryHandler "1" *-- "many" IValidator : has
+QueryHandler "1" *-- "many" ICalculator : has
+
+ICalculator <|-- DayRateCalculator
+ICalculator <|-- NightRateCalculator
+ICalculator <|-- SaturdayRateCalculator
+ICalculator <|-- SundayRateCalculator
+
+IValidator <|-- BookingIncrementValidator
+IValidator <|-- BookingOffsetValidator
+IValidator <|-- MinimumBookingValidator
+IValidator <|-- MaximumBookingValidator
+
+@enduml

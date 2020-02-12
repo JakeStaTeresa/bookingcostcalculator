@@ -1,0 +1,28 @@
+@startuml "classes"
+class Booking {
+    int id
+    DateTime from
+    DateTime to
+    decimal cost
+    boolean isValid
+}
+
+interface IValidator {
+  bool validate(Booking booking)
+}
+
+interface ICalculator {
+  bool isApplicable(Booking booking)
+  decimal Calculate(Booking booking)
+}
+
+class QueryHandler {
+  IEnumerable<IValidator> validators
+  IEnumerable<ICalculator> calculators
+}
+
+class Program {
+  QueryHandler queryHandler;
+}
+
+@enduml
