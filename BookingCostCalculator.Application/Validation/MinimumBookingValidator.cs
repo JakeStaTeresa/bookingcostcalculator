@@ -6,7 +6,8 @@ namespace BookingCostCalculator.Application.Validation
     {
         public bool Validate(Booking booking)
         {
-            return booking.To.Subtract(booking.From).TotalHours >= 1;
+            var totalHours = booking.To.Subtract(booking.From).TotalHours;
+            return totalHours >= 1;
         }
     }
 }
