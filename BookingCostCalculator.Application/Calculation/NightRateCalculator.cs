@@ -18,7 +18,10 @@ namespace BookingCostCalculator.Application.Calculation
         
         private bool InRange(DateTimeOffset time)
         {
-            return (time.Hour > 20 && time.Hour <= 23) || (time.Hour >= 0 && time.Hour <= 6);
+            var isBetween8pmAndMidnight = time > time.Date.AddHours(20).AddMilliseconds(1) && time <= time.Date.AddDays(1);
+            var isBetweenMidnightAnd6am = time >= time.Date && time <= time.Date.AddHours(6);
+            
+            return  isBetween8pmAndMidnight || isBetweenMidnightAnd6am;
         }
     }
 }

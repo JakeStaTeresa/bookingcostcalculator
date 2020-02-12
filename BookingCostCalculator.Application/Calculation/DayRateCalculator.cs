@@ -1,4 +1,3 @@
-using System;
 using BookingCostCalculator.Domain;
 using Microsoft.Extensions.Options;
 
@@ -13,12 +12,13 @@ namespace BookingCostCalculator.Application.Calculation
         
         public override bool IsApplicable(Booking booking)
         {
-            return InRange(booking.From) || InRange(booking.To);
-        }
-        
-        private bool InRange(DateTimeOffset time)
-        {
-            return time.Hour > 6 && time.Hour <= 20;
+            var isFromAfter6am = booking.From.Date.AddHours(6).AddMilliseconds(1) <= booking.From;
+            var isNotOverlapping = booking.From <= booking.To;
+            var isToBefore8pm = booking.To <= booking.From.Date.AddHours(20);
+            
+            return  isFromAfter6am &&
+                    isNotOverlapping &&
+                    isToBefore8pm;
         }
     }
 }

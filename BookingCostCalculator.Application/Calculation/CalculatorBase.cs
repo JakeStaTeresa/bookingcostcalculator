@@ -10,6 +10,11 @@ namespace BookingCostCalculator.Application.Calculation
         
         public decimal Calculate(Booking booking)
         {
+            if (!IsApplicable(booking))
+            {
+                return 0m;
+            }
+            
             var timespan = booking.To.Subtract(booking.From);
             var cost = Convert.ToDecimal(timespan.TotalHours) * Rate;
             return Math.Round(cost, 2, MidpointRounding.ToZero);
