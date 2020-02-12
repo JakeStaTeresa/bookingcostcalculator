@@ -40,10 +40,10 @@ namespace BookingCostCalculator.Application.Queries
                 }
             }
             
-            public Task<IEnumerable<Booking>> Handle(GetBookingCostsQuery request, CancellationToken cancellationToken)
+            public async Task<IEnumerable<Booking>> Handle(GetBookingCostsQuery request, CancellationToken cancellationToken)
             {
                 var returnValue = request.Bookings.Select(CalculateCost);
-                return Task.FromResult(returnValue);
+                return returnValue;
             }
 
             private Booking CalculateCost(Booking booking)
@@ -57,8 +57,11 @@ namespace BookingCostCalculator.Application.Queries
                 {
                     // Calculator with highest applicable rate is applied. This is dictated
                     // by dependency registration order
-                    var calculator = calculators.First(c => c.IsApplicable(booking));
-                    cost = calculator.Calculate(booking);
+                    var calculator = calculators.FirstOrDefault(c => c.IsApplicable(booking));
+                    if (calculator != null)
+                    {
+                        cost = calculator.Calculate(booking);
+                    }
                 }
 
                 return new Booking
