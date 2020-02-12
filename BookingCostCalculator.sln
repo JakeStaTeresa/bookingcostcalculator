@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingCostCalculator.Appli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingCostCalculator.CommandLine", "BookingCostCalculator.CommandLine\BookingCostCalculator.CommandLine.csproj", "{8FA0334A-F5CE-4792-8A76-55D0B5A4D96D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingCostCalculator.Application.Tests", "BookingCostCalculator.Application.Tests\BookingCostCalculator.Application.Tests.csproj", "{ADAB5560-7422-48ED-B161-AC03B4FABBC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{8FA0334A-F5CE-4792-8A76-55D0B5A4D96D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FA0334A-F5CE-4792-8A76-55D0B5A4D96D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FA0334A-F5CE-4792-8A76-55D0B5A4D96D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADAB5560-7422-48ED-B161-AC03B4FABBC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADAB5560-7422-48ED-B161-AC03B4FABBC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADAB5560-7422-48ED-B161-AC03B4FABBC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADAB5560-7422-48ED-B161-AC03B4FABBC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
